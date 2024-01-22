@@ -84,7 +84,7 @@ const Medicine = ({ filter }) => {
     <div className="container mx-auto grid grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
       {filteredMedicine?.map((medicine) => (
         <div className="space-y-3" key={medicine?.ID}>
-          <div className="flex items-center justify-center rounded-md border border-[#324251]/30 bg-white p-4">
+          <div className="flex items-center justify-center rounded-md border border-[#0360D9]/30 bg-white p-4">
             <img
               className="max-w-[144px] h-40"
               src={medicine?.Image}
@@ -92,6 +92,7 @@ const Medicine = ({ filter }) => {
             />
           </div>
           <div className="space-y-3">
+            <div className="space-y-3 pl-2">
             <h4 className="text-lg font-bold lg:text-xl">
               {medicine?.Medname}
             </h4>
@@ -106,11 +107,9 @@ const Medicine = ({ filter }) => {
                 Price : ${medicine?.Price}
               </h4>
             </div>
-            <p className="text-xs lg:text-sm">
-              Category : <span>{medicine?.Description}</span>
-            </p>
-            <div className="flex items-center gap-3 text-xs lg:text-sm justify-between md:px-4">
-              <button className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#1C4336] py-1.5 text-white transition-all hover:opacity-80 lg:py-1.5">
+            </div>
+            <div className="flex items-center gap-3 text-xs lg:text-sm justify-between md:px-2">
+              <button className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#0360D9] py-1.5 text-white transition-all hover:opacity-80 lg:py-1.5">
                 <Cart />
                 Add to Cart
               </button>
@@ -118,8 +117,8 @@ const Medicine = ({ filter }) => {
                 onClick={() => handleToggleFavorite(medicine?.ID)}
                 className={`flex min-w-[132px] items-center justify-center gap-1 rounded-md ${
                   isFavorite(medicine?.ID)
-                    ? "bg-[#DC2954]/[14%] text-[#DC2954] hover:bg-[#DC2954]/[24%]"
-                    : "bg-[#1C4336]/[14%] text-[#1C4336] hover:bg-[#1C4336]/[24%]"
+                    ? "bg-[#DC2954]/[14%] text-[#0360D9] hover:bg-[#DC2954]/[24%]"
+                    : "bg-[#0360D9]/[14%] text-[#1C4336] hover:bg-[#0360D9]/[24%]"
                 } py-1.5 transition-all lg:py-1.5`}
               >
                 {isFavorite(medicine?.ID) ? <LoveFill /> : <LoveLine />}
