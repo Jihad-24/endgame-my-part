@@ -72,6 +72,7 @@ const SideContent = () => {
           <small className="text-[#2E2E2E]">Installment</small>
         </div>
       </div>
+
       <div className="mx-2 space-y-3">
         <h1 className="text-xl">Category</h1>
         <hr />

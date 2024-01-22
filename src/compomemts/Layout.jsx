@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import Medicine from "./Medicine";
-import SideBar from "./SideBar";
-import SideContent from "./SideContent";
+import SideSearch from "./SideSearch";
 import SideCategory from "./SideCategory";
+import SideContent from "./SideContent";
 const Layout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [filter, setFilter] = useState({
@@ -40,7 +40,7 @@ const Layout = () => {
               <span className="absolute w-12 group-hover:w-[88%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-sky-300 group-hover:bg-sky-500 group-hover:duration-500 -z-10"></span>
               Filter
             </button>
-            <SideBar filter={filter} setFilter={setFilter} />
+            <SideSearch filter={filter} setFilter={setFilter} />
           </div>
           <Drawer
             open={isOpen}
@@ -48,18 +48,18 @@ const Layout = () => {
             direction="left"
             className="bla bla bla"
           >
-            <SideBar filter={filter} setFilter={setFilter} />
-            <SideCategory filter={filter} setFilter={setFilter}/>
-            <SideContent filter={filter} setFilter={setFilter}/>
+            <SideSearch filter={filter} setFilter={setFilter} />
+            <SideCategory filter={filter} setFilter={setFilter} />
+            <SideContent filter={filter} setFilter={setFilter} />
           </Drawer>
           <div className="mx-6">
             <Medicine filter={filter} setFilter={setFilter} />
           </div>
         </div>
         <div className="col-span-2 hidden md:block border-r-2 border-gray-300">
-          <SideBar filter={filter} setFilter={setFilter} />
-          <SideCategory filter={filter} setFilter={setFilter}/>
-          <SideContent filter={filter} setFilter={setFilter}/>
+          <SideSearch filter={filter} setFilter={setFilter} />
+          <SideCategory filter={filter} setFilter={setFilter} />
+          <SideContent filter={filter} setFilter={setFilter} />
         </div>
         <div className=" col-span-10 mx-6 hidden md:block">
           <Medicine filter={filter} setFilter={setFilter} />
