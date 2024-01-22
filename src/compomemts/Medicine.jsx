@@ -8,8 +8,8 @@ const Medicine = ({ filter }) => {
   const [medicine, setMedicine] = useState([]);
   const [filteredMedicine, setFilteredMedicine] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [priceRange, setPriceRange] = useState(100);
-  // console.log(filteredMedicine);
+  const [priceRange, setPriceRange] = useState(90);
+
   const handlePriceChange = (event) => {
     setPriceRange(event.target.value);
   };
@@ -100,30 +100,30 @@ const Medicine = ({ filter }) => {
   return (
     <>
       <div className="mx-2 space-y-3 mb-5 -mt-2">
-        <h1 className="text-xl text-[#021526] font-bold text-center">
-          Set Price Range
-        </h1>
-        <input
-          className="w-full range"
-          type="range"
-          value={priceRange}
-          onChange={handlePriceChange}
-          max={100}
-          min={0}
-          step={20}
-        />
-        <div className="w-full flex justify-between text-xs px-2 text-[#021526]">
-          <span></span>
-          <span className="text-[#021526] font-medium">$20</span>
-          <span className="text-[#021526] font-medium">$40</span>
-          <span className="text-[#021526] font-medium">$60</span>
-          <span className="text-[#021526] font-medium">$80</span>
-          <span className="text-[#021526] font-medium">$100</span>
-        </div>
+      <h1 className="text-xl text-[#021526] font-bold text-center">
+        Set Price Range
+      </h1>
+      <input
+        className="w-full range"
+        type="range"
+        value={priceRange}
+        onChange={handlePriceChange}
+        max={90}
+        min={0}
+        step={15}
+      />
+      <div className="w-full flex justify-between text-xs px-2 text-[#021526]">
+        <span></span>
+        {[15, 30, 45, 60, 75, 90].map((step) => (
+          <span key={step} className="text-[#021526] font-medium">
+            ${step}
+          </span>
+        ))}
       </div>
+    </div>
       <div className="container mx-auto grid grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
         {filteredMedicine?.map((medicine) => (
-          <div className="space-y-3" key={medicine?.ID}>
+          <div className="space-y-3 " key={medicine?.ID}>
             <div className="flex items-center justify-center rounded-md border border-[#0360D9]/30 bg-white p-4">
               <img
                 className="max-w-[144px] h-40"
@@ -150,7 +150,7 @@ const Medicine = ({ filter }) => {
                   </h4>
                 </div>
               </div>
-              <div className="flex items-center gap-3 text-xs lg:text-sm justify-between md:px-2">
+              <div className="flex  gap-3 text-xs lg:text-sm justify-between md:px-2">
                 <button className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#0360D9] py-1.5 text-white transition-all hover:opacity-80 lg:py-1.5">
                   <Cart />
                   Add to Cart
