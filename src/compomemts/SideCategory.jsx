@@ -17,8 +17,6 @@ const SideCategory = ({ filter, setFilter }) => {
           }
         >
           <option value="">Sort By Category</option>
-          <option value="price_asc">Price (Lower to Higher)</option>
-          <option value="price_desc">Price (Higher to Lower)</option>
           <option value="category_Herbal_Care">Herbal Care</option>
           <option value="category_Womens_Care">Womens Care</option>
           <option value="category_COVID_Special">COVID Special</option>
@@ -26,6 +24,8 @@ const SideCategory = ({ filter, setFilter }) => {
           <option value="category_Supplements">Supplements</option>
           <option value="category_Nutrition">Nutrition</option>
           <option value="category_Personal_Care">Personal Care</option>
+          <option value="price_asc">Price (Lower to Higher)</option>
+          <option value="price_desc">Price (Higher to Lower)</option>
         </select>
       </div>
     );
