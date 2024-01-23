@@ -99,12 +99,12 @@ const Medicine = ({ filter }) => {
 
   return (
     <>
-      <div className="mx-2 space-y-3 mb-5 -mt-2">
-      <h1 className="text-xl text-[#021526] font-bold text-center">
+      <div className="mx-2 space-y-2 mb-5 -mt-2 mr-5">
+      <h1 className="text-xl font-bold text-center text-[#0360D9]">
         Set Price Range
       </h1>
       <input
-        className="w-full range"
+        className="w-full range range-xs md:range-sm range-primary"
         type="range"
         value={priceRange}
         onChange={handlePriceChange}
@@ -112,10 +112,10 @@ const Medicine = ({ filter }) => {
         min={0}
         step={15}
       />
-      <div className="w-full flex justify-between text-xs px-2 text-[#021526]">
+      <div className="w-full flex justify-between">
         <span></span>
         {[15, 30, 45, 60, 75, 90].map((step) => (
-          <span key={step} className="text-[#021526] font-medium">
+          <span key={step} className="text-[#021526] text-xs font-bold hover:text-[#0360D9]">
             ${step}
           </span>
         ))}
