@@ -56,7 +56,7 @@ const Layout = () => {
             <Medicine filter={filter} setFilter={setFilter} />
           </div>
         </div>
-        <div className="col-span-2 hidden md:block border-r-2 border-gray-300">
+        <div className="col-span-2 hidden md:block border-r-2 border-[#0360D9]">
           <SideSearch filter={filter} setFilter={setFilter} />
           <SideCategory filter={filter} setFilter={setFilter} />
           <SideContent filter={filter} setFilter={setFilter} />
